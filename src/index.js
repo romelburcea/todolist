@@ -11,3 +11,15 @@ function todo (title, description, dueDate, priority, notes, checklist){
 }
 
 
+const addbtn = document.querySelector(".addtodo")
+const dialog = document.querySelector(".mydialog")
+const cancel = document.getElementById("cancel")
+const submit = document.getElementById("submit")
+
+addbtn.addEventListener("click", () => {
+    dialog.showModal()
+})
+
+cancel.addEventListener("click", () => {
+    dialog.close()
+})
