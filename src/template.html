@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Welcome!!</H1>
+
+    <div class="To Do Stuffs">
+        <h2>My Stuff</h2>
+        <div class="buttons">
+            <button class="addbook">Add New ToDo</button>
+            <button class="deletebook">Delete ToDo</button>
+        </div>
+
+        <dialog class="mydialog">
+            <form class="myform">
+                <label for="title">Title:</label>
+                <!-- The id and for values should match here -->
+                <input type="text" id="title" name="title">
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description">
+
+                <label for="duedate">Due Date:</label>
+                <input type="datetime-local" id="duedate" name="duedate">
+
+                <label for="priority">Priority:</label>
+                <select id="country" name="country">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+                <label for="bites">Notes:</label>
+                <input type="text" id="notes" name="notes">
+
+                <label for="checklist">Done:</label>
+                <input type="checkbox" id="checklist" name="checklist">
+                
+                <menu>
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </menu>
+            </form>
+        </dialog>
+        <div class="booksLibrary">
+            <div class="book">
+                <h4> Title: "Tropic of Cancer" </h4>
+                <h4>Author: Henry Miller</h4>
+                <h4>Pages: 290</h4>
+                <h4>Read</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
