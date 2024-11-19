@@ -20,6 +20,7 @@ const addbtn = document.querySelector(".addtodo")
 const dialog = document.querySelector(".mydialog")
 const cancel = document.getElementById("cancel")
 const submit = document.getElementById("submit")
+const deleteBtn = document.querySelector(".deletetodo")
 
 addbtn.addEventListener("click", () => {
     dialog.showModal()
@@ -33,6 +34,15 @@ submit.addEventListener("click", (event) => {
     event.preventDefault()
     addprojects()
 })
+
+deleteBtn.addEventListener("click", () => {
+    if(projectsList.children.length > 0){
+        projectsList.removeChild(projectsList.lastChild)
+        projects.pop()
+    }
+})
+
+
 
 
 function showProjects(){
@@ -56,7 +66,7 @@ function showProjects(){
 function addprojects(){
     const title = document.getElementById("title").value
     const description = document.getElementById("description").value
-    const duedate = document.getElementById("description").value
+    const duedate = document.getElementById("duedate").value
     const priority = document.getElementById("priority").value
     const notes = document.getElementById("notes").value
     const checklist = document.getElementById("checklist").checked
@@ -72,6 +82,17 @@ function addprojects(){
         console.log(projects[i])
     }
 
+    const container = document.createElement("div")
+    container.classList.add("container")
 
-    
+    container.innerHTML = `<div class="project">
+                <h4>Title: ${title} </h4>
+                <h4>Description: ${description}</h4>
+                <h4>Due Date: ${duedate}</h4>
+                <h4>Priority: ${priority}</h4>
+                <h4>Notes: ${notes}</h4>
+                <h4>${ifDone}</h4>        
+    </div>`
+
+    projectsList.appendChild(container)
 }
