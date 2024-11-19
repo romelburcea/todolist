@@ -29,6 +29,11 @@ cancel.addEventListener("click", () => {
     dialog.close()
 })
 
+submit.addEventListener("click", (event) => {
+    event.preventDefault()
+    addprojects()
+})
+
 
 function showProjects(){
     for(let i = 0; i < projects.length; i++){
@@ -45,4 +50,28 @@ function showProjects(){
             projectsList.appendChild(newproject)
     }
 
+}
+
+
+function addprojects(){
+    const title = document.getElementById("title").value
+    const description = document.getElementById("description").value
+    const duedate = document.getElementById("description").value
+    const priority = document.getElementById("priority").value
+    const notes = document.getElementById("notes").value
+    const checklist = document.getElementById("checklist").checked
+
+
+    const ifDone = checklist ? "Done" : "Not Done"
+
+    const todoItem = new todo(title, description, duedate, priority, notes, checklist)
+
+    projects.push(todoItem)
+
+    for(let i = 0 ; i < projects.length; i++){
+        console.log(projects[i])
+    }
+
+
+    
 }
