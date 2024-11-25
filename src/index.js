@@ -48,7 +48,12 @@ deleteBtn.addEventListener("click", () => {
 })
 
 highButton.addEventListener("click", () => {
+    // if(projectsList.children.length > 0){
+    //     filterStuff(projects, "High")
+    // }
+
     filterStuff()
+    
 })
 
 // console.log(addprojects())
