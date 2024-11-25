@@ -1,19 +1,23 @@
+import addprojects from './addToDoFile';
+import showProjects from './showToDoFile';
+import filterStuff from './priorityFile';
 import { format, compareAsc } from 'date-fns';
 import "./styles.css";
 
 
-const projectsList  = document.querySelector(".projectsList")
-
-const projects = [new todo("Clean", "Dishes, Vacuum", "19/11/2024", "Medium", "Need to wash dishes and what not", "Done")]
-
-function todo (title, description, dueDate, priority, notes, checklist){
-    this.title = title
-    this.description = description
-    this.dueDate = dueDate
-    this.priority = priority
-    this.notes = notes
-    this.checklist = checklist
+export function todo(title, description, dueDate, priority, notes, checklist) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.priority = priority;
+    this.notes = notes;
+    this.checklist = checklist;
 }
+
+
+export const projects = [new todo("Clean", "Dishes, Vacuum", "19/11/2024", "Medium", "Need to wash dishes and what not", true)];
+
+export const projectsList = document.querySelector(".projectsList");
 
 
 const addbtn = document.querySelector(".addtodo")
@@ -21,6 +25,7 @@ const dialog = document.querySelector(".mydialog")
 const cancel = document.getElementById("cancel")
 const submit = document.getElementById("submit")
 const deleteBtn = document.querySelector(".deletetodo")
+const highButton = document.querySelector(".highBtn")
 
 addbtn.addEventListener("click", () => {
     dialog.showModal()
@@ -42,57 +47,62 @@ deleteBtn.addEventListener("click", () => {
     }
 })
 
+highButton.addEventListener("click", () => {
+    filterStuff()
+})
+
+// console.log(addprojects())
+// console.log(showProjects())
 
 
+// function showProjects(){
+//     for(let i = 0; i < projects.length; i++){
+//         const newproject = document.createElement("div")
+//         newproject.classList.add(".newproject")
+//         newproject.innerHTML = `<div class="book">
+//                 <h4>Title: ${projects[i].title} </h4>
+//                 <h4>Description: ${projects[i].description} </h4>
+//                 <h4>Due Date: ${projects[i].dueDate}</h4>
+//                 <h4>Priority: ${projects[i].priority}</h4>
+//                 <h4>Notes: ${projects[i].notes}</h4>
+//                 <h4>Done</h4> ${project[i].checklist}`
 
-function showProjects(){
-    for(let i = 0; i < projects.length; i++){
-        const newproject = document.createElement("div")
-        newproject.classList.add(".newproject")
-        newproject.innerHTML = `<div class="book">
-                <h4>Title: ${projects[i].title} </h4>
-                <h4>Description: ${projects[i].description} </h4>
-                <h4>Due Date: ${projects[i].dueDate}</h4>
-                <h4>Priority: ${projects[i].priority}</h4>
-                <h4>Notes: ${projects[i].notes}</h4>
-                <h4>Done</h4> ${project[i].checklist}`
+//             projectsList.appendChild(newproject)
+//     }
 
-            projectsList.appendChild(newproject)
-    }
-
-}
-
-
-function addprojects(){
-    const title = document.getElementById("title").value
-    const description = document.getElementById("description").value
-    const duedate = document.getElementById("duedate").value
-    const priority = document.getElementById("priority").value
-    const notes = document.getElementById("notes").value
-    const checklist = document.getElementById("checklist").checked
+// }
 
 
-    const ifDone = checklist ? "Done" : "Not Done"
+// function addprojects(){
+//     const title = document.getElementById("title").value
+//     const description = document.getElementById("description").value
+//     const duedate = document.getElementById("duedate").value
+//     const priority = document.getElementById("priority").value
+//     const notes = document.getElementById("notes").value
+//     const checklist = document.getElementById("checklist").checked
 
-    const todoItem = new todo(title, description, duedate, priority, notes, checklist)
 
-    projects.push(todoItem)
+//     const ifDone = checklist ? "Done" : "Not Done"
 
-    for(let i = 0 ; i < projects.length; i++){
-        console.log(projects[i])
-    }
+//     const todoItem = new todo(title, description, duedate, priority, notes, checklist)
 
-    const container = document.createElement("div")
-    container.classList.add("container")
+//     projects.push(todoItem)
 
-    container.innerHTML = `<div class="project">
-                <h4>Title: ${title} </h4>
-                <h4>Description: ${description}</h4>
-                <h4>Due Date: ${duedate}</h4>
-                <h4>Priority: ${priority}</h4>
-                <h4>Notes: ${notes}</h4>
-                <h4>${ifDone}</h4>        
-    </div>`
+//     for(let i = 0 ; i < projects.length; i++){
+//         console.log(projects[i])
+//     }
 
-    projectsList.appendChild(container)
-}
+//     const container = document.createElement("div")
+//     container.classList.add("container")
+
+//     container.innerHTML = `<div class="project">
+//                 <h4>Title: ${title} </h4>
+//                 <h4>Description: ${description}</h4>
+//                 <h4>Due Date: ${duedate}</h4>
+//                 <h4>Priority: ${priority}</h4>
+//                 <h4>Notes: ${notes}</h4>
+//                 <h4>${ifDone}</h4>        
+//     </div>`
+
+//     projectsList.appendChild(container)
+// }
