@@ -31,6 +31,4 @@ function filterStuff(projects, projectsPriority){
 export default filterStuff
 
 
-/// sa nu uit!! -> trb sa termin functia 
-/// si sa vad la ce trb sa ii dau appendchild
-/// sa testez daca functioneaza si dupa sa le fac special si pt medium si low
+
