@@ -48,13 +48,17 @@ deleteBtn.addEventListener("click", () => {
 })
 
 highButton.addEventListener("click", () => {
-    // if(projectsList.children.length > 0){
-    //     filterStuff(projects, "High")
-    // }
-
-    filterStuff()
+   filterStuff(projects, "high")
     
 })
+
+const resetButton = document.createElement("button");
+resetButton.textContent = "Show All";
+document.body.appendChild(resetButton);
+
+resetButton.addEventListener("click", () => {
+    showProjects(); // Render all projects
+});
 
 // console.log(addprojects())
 // console.log(showProjects())
