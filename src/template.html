@@ -26,31 +26,32 @@
         <dialog class="mydialog">
             <form class="myform">
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title">
-
+                <input type="text" id="title" name="title" required>
+        
                 <label for="description">Description:</label>
-                <input type="text" id="description" name="description">
-
+                <input type="text" id="description" name="description" required>
+        
                 <label for="duedate">Due Date:</label>
-                <input type="datetime-local" id="duedate" name="duedate">
-
+                <input type="datetime-local" id="duedate" name="duedate" required>
+        
                 <label for="priority">Priority:</label>
-                <select id="priority" name="priority">
+                <select id="priority" name="priority" required>
+                    <option value="" disabled selected>Select priority</option>
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
                     <option value="low">Low</option>
                 </select>
-
+        
                 <label for="notes">Notes:</label>
-                <input type="text" id="notes" name="notes">
-
+                <input type="text" id="notes" name="notes" required>
+        
                 <label for="checklist">Done</label>
-                <input type="checkbox" id="checklist" name="checklist">
-
-                <menu>
+                <input type="checkbox" id="checklist" name="checklist" required>
+        
+                
                     <button type="submit" id="submit">Submit</button>
                     <button type="button" id="cancel">Cancel</button>
-                </menu>
+                
             </form>
         </dialog>
 
@@ -60,7 +61,7 @@
                 <h4>Description: As it says, coding</h4>
                 <h4>Due Date: 18/11/2024</h4>
                 <h4>Priority: High</h4>
-                <h4>Notes: Messed around with git and webpack, then started the project fully</h4>
+                <h4>Notes: Messed around with git and webpack, then started</h4>
                 <h4>Done</h4>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { format, compareAsc } from 'date-fns';
 import "./styles.css";
 import { addPriorityButtonListeners } from './filterButtonsFile';
 import { highButton, medBtn, lowBtn } from './filterButtonsFile';
+import { setupFormValidation } from './formValidation';
 
 
 export function todo(title, description, dueDate, priority, notes, checklist) {
@@ -62,6 +63,9 @@ lowBtn.addEventListener("click", () => {
     filterStuff(projects, "low")
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+    setupFormValidation()
+})
 
 
 const resetButton = document.getElementById("resetButton");
