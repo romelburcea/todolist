@@ -4,8 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<script defer src="main.js"></script></head>
+</head>
 <body>
-    <H1>Welcome!!</H1>
+    <h1>Welcome!!</h1>
+
+    <div class="To Do Stuffs">
+        <h2>My Stuff</h2>
+        <div class="buttons">
+            <button class="addtodo">Add New ToDo</button>
+            <button class="deletetodo">Delete ToDo</button>
+        </div>
+
+        <div class="listing">
+            <h1>Projects Priority</h1>
+            <button class="highBtn">High</button>
+            <button class="medBtn">Medium</button>
+            <button class="lowBtn">Low</button>
+            <button id="resetButton">Show All</button>
+        </div>
+
+        <dialog class="mydialog">
+            <form class="myform">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+        
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+        
+                <label for="duedate">Due Date:</label>
+                <input type="datetime-local" id="duedate" name="duedate" required>
+        
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" required>
+                    <option value="" disabled selected>Select priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+        
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" name="notes" required>
+        
+                <label for="checklist">Done</label>
+                <input type="checkbox" id="checklist" name="checklist" required>
+        
+                
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="button" id="cancel">Cancel</button>
+                
+            </form>
+        </dialog>
+
+        <div class="projectsList">
+            <div class="project">
+                <h4>Title: Coding for an Hour </h4>
+                <h4>Description: As it says, coding</h4>
+                <h4>Due Date: 18/11/2024</h4>
+                <h4>Priority: High</h4>
+                <h4>Notes: Messed around with git and webpack, then started</h4>
+                <h4>Done</h4>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
